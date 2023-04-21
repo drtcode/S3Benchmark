@@ -6,6 +6,11 @@ This script will benchmark performance from a given machine, where it is run fro
 After configuring the target environment, the test can perform the uploads directly from memory or can optionally be instructed to perform the uploads from a disk target.
 By using the default in-memory data generation & upload, the disk is bypassed, thereby eliminating it as a potential bottleneck.
 
+## Prerequisites
+* The AWS.Tools.S3 powershell module, published by AWS, is required to run this tool. You will have to install it manually before running:
+
+      Install-Module AWS.Tools.S3
+
 ## Usage:
 #### Load the module:
     . .\S3Benchmark.ps1
