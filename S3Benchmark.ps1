@@ -46,7 +46,7 @@ Starts the test using defaults upon loading the script. Implies -Setup.
 * Ensure your credentials have an IAM policy with ability to list the bucket(s), create bucket(s) [optionally], and write to the target bucket.
 * If using this tool to troubleshoot performance, the main 4 potential bottlenecks that this test may help identify are:
     [DISK]-->[Machine (CPU/Mem)]-->[Network]-->[Bucket]
-* When troubleshooting for performance, it is recommended to run the test in both in-memory and from-disk modes to give you an indication of whether the bottleneck is disk-bound or not.
+* When troubleshooting for performance, it is recommended to run the test in both in-memory (default) and from-disk (-UploadFromFileSystem) modes to give you an indication of whether the bottleneck is disk-bound or not.
 * While the test is being run, it is recommended to watch Task Manager or Resource Manager to see how resources are being utilized.
 .LINK
 https://github.com/drtcode/S3Benchmark
