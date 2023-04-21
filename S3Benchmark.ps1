@@ -6,6 +6,10 @@ This script will benchmark performance from a given machine, where it is run fro
 After configuring the target environment, the test can perform the uploads directly from memory or can optionally be instructed to perform the uploads from a disk target.
 By using the default in-memory data generation & upload, the disk is bypassed, thereby eliminating it as a potential bottleneck.
 
+PREREQUISITES:
+The AWS.Tools.S3 powershell module, published by AWS, is required to run this tool. You will have to install it manually before running.
+    e.g. Install-Module AWS.Tools.S3
+
 USAGE:
 Load the module:
     . .\S3Benchmark.ps1
@@ -43,7 +47,10 @@ Starts the test using defaults upon loading the script. Implies -Setup.
         -NumberOfFiles [value]                    (Sets the number of files to generate; DEFAULT: Based on block size to generate 1GB worth of files)
         -MaxThreads [value]                       (Sets the number of parallel processes perform upload; DEFAULT: Based on block size or CPU cores)
 .NOTES
+* The AWS.Tools.S3 powershell module, published by AWS, is required to run this tool. You will have to install it manually before running.
+    e.g. Install-Module AWS.Tools.S3
 * Ensure your credentials have an IAM policy with ability to list the bucket(s), create bucket(s) [optionally], and write to the target bucket.
+* Thread count is a bit subjective, and may require trying a few options. I have
 * If using this tool to troubleshoot performance, the main 4 potential bottlenecks that this test may help identify are:
     [DISK]-->[Machine (CPU/Mem)]-->[Network]-->[Bucket]
 * When troubleshooting for performance, it is recommended to run the test in both in-memory (default) and from-disk (-UploadFromFileSystem) modes to give you an indication of whether the bottleneck is disk-bound or not.
