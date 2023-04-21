@@ -6,7 +6,7 @@ This script will benchmark performance from a given machine, where it is run fro
 After configuring the target environment, the test can perform the uploads directly from memory or can optionally be instructed to perform the uploads from a disk target.
 By using the default in-memory data generation & upload, the disk is bypassed, thereby eliminating it as a potential bottleneck.
 
-### USAGE:
+## Usage:
 #### Load the module:
     . .\S3Benchmark.ps1
 Optionally, you can set the -Setup and/or -StartTest switches to immediately setup & run the test.
